@@ -1,47 +1,32 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-      const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Navigation',
-        home: HomeScreen(),
-      )
-  );
-}
+void main() => runApp(const OutlinedButtonExampleApp());
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class OutlinedButtonExampleApp extends StatelessWidget {
+  const OutlinedButtonExampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Click here to continue'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const DetailScreen()),
-            );
-          },
+    return const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: OutlinedButtonExample(),
         ),
       ),
     );
   }
 }
 
-class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+class OutlinedButtonExample extends StatelessWidget {
+  const OutlinedButtonExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-      ),
+    return OutlinedButton(
+      onPressed: () {
+        debugPrint('Received click');
+      },
+      child: const Text('Click here to continue'),
     );
   }
 }
