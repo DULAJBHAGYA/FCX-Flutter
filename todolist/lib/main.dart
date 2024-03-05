@@ -1,32 +1,21 @@
 import 'package:flutter/material.dart';
+import 'Pages/frotend/Home.dart';
+import 'Pages/frotend/Menu.dart';
 
-void main() => runApp(const OutlinedButtonExampleApp());
-
-class OutlinedButtonExampleApp extends StatelessWidget {
-  const OutlinedButtonExampleApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: OutlinedButtonExample(),
-        ),
-      ),
-    );
-  }
+void main() {
+  runApp(MyApp());
 }
 
-class OutlinedButtonExample extends StatelessWidget {
-  const OutlinedButtonExample({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {
-        debugPrint('Received click');
+    return MaterialApp(
+      title: 'Flutter Navigation',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/menu': (context) => Menu(),
       },
-      child: const Text('Click here to continue'),
     );
   }
 }
