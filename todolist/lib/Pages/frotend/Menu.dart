@@ -16,6 +16,7 @@ class Menu extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "To-Do List",
@@ -26,20 +27,22 @@ class Menu extends StatelessWidget {
               ),
             ),
             Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              MenuCard(title: 'Sleep'),
-              MenuCard(title: 'study'),
-              MenuCard(title: 'eat'),
-            ],
-          ),
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                MenuCard(title: 'Sleep'),
+                MenuCard(title: 'Study'),
+                MenuCard(title: 'Eat'),
+              ],
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/calender');
+              },
+              icon: Icon(Icons.calendar_month),
+            )
           ],
         ),
       ),
     );
   }
 }
-
-
-
-

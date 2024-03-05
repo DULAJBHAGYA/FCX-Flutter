@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/Pages/frotend/Calender.dart';
 import 'Pages/frotend/Home.dart';
 import 'Pages/frotend/Menu.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         '/menu': (context) => Menu(),
+        '/calender': (context) => CalendarApp(),
       },
     );
   }

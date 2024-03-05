@@ -16,14 +16,13 @@ class _MenuCardState extends State<MenuCard> {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(widget.title),
-        onTap: () {},
-        subtitle: Column(
+        subtitle: Row(
           children: [
-            SizedBox(width: 10,),
+            Text(widget.title),
+            SizedBox(width: 40,),
             Checkbox(
-              checkColor: Colors.greenAccent,
-              activeColor: Colors.red,
+              checkColor: Color.fromARGB(255, 245, 248, 247),
+              activeColor: Color.fromARGB(255, 11, 7, 7),
               value: valueFirst,
               onChanged: (bool? value) {
                 if (value != null) {
@@ -33,12 +32,16 @@ class _MenuCardState extends State<MenuCard> {
                 }
               },
             ),
+            const SizedBox(width: 20),
             IconButton(
             icon: Icon(Icons.delete),
+            iconSize: 24.0,
+            color: Color.fromARGB(255, 230, 52, 52),
             onPressed: () {
             Navigator.pop(context);
           },
             ),
+            const SizedBox(width: 20),
             IconButton(
             icon: Icon(Icons.edit),
             onPressed: () {
