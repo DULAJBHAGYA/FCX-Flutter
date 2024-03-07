@@ -14,17 +14,21 @@ class Home extends StatelessWidget {
         child: Column(
           children: [
             serchBox(),
-            ListView(
-              children: [
-                Container(
-                    margin: EdgeInsets.only(top: 50, bottom: 20),
-                    ),
-              ],
-            ),
+            _buildListView(),
           ],
         ),
       ),
     );
+  }
+
+  ListView _buildListView() {
+    return ListView(
+            children: [
+              Container(
+                  margin: EdgeInsets.only(top: 50, bottom: 20),
+                  ),
+            ],
+          );
   }
 
   Widget serchBox() {
